@@ -34,6 +34,24 @@ module.exports.post = function (req, res) {
     .catch(err => res.status(400).json('Error:' + err));
 }
 
+
+module.exports.put = function(req, res) {
+    Training.findOne({ id: req.params.id })
+    .then(training => {
+        training.id = req.body.id;
+        training.ptID = req.body.ptID;
+        training.clientID = req.body.clientID; 
+        training.clientName = req.body.clientName;
+        training.description = req.body.description;
+        training.date = Date.parse(req.body.date);
+        training.save()
+        .then(() => res.json("Training is updated!"))
+        .catch(err => res.status(400).json('Error:' + err));
+
+    })
+    .catch(err => res.status(400).json('Error:' + err));
+}
+
 module.exports.delete = function(req, res) {
     Training.deleteOne({ id: req.params.id })
     .then(() => res.json("Training is deleted"))

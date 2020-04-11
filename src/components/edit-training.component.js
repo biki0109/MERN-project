@@ -96,7 +96,7 @@ export default class EditTraining extends Component {
             date: this.state.date,
         }
 
-        axios.post('http://localhost:8080/trainings/update/'+this.props.match.params.id, training)
+        axios.put('http://localhost:8080/trainings/update/'+this.props.match.params.id, training)
         .then(res => console.log(res.data));
 
         window.location = '/';
