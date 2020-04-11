@@ -18,6 +18,7 @@ export default class EditTraining extends Component {
             clientID: "",
             ptID: "3",
             clientNames: [],
+            clientNames_ID: new Array(),
             description: '',
             date: new Date(),
             totalTraining: 0,
@@ -43,6 +44,7 @@ export default class EditTraining extends Component {
             if (response.data.length > 0) {
                 this.setState({
                     clientNames: response.data.map(user => user.name),
+                    clientNames_ID: response.data.map(user => ({['id']: user.id, ['name']: user.name})),
                 })
             }
         })
@@ -88,7 +90,7 @@ export default class EditTraining extends Component {
         const training = {
             id: this.state.id,
             ptID: '3',
-            clientID: this.state.clientID,
+            clientID: this.state.clientNames_ID.find(a => a.name === this.state.clientName).id,
             clientName: this.state.clientName,
             description: this.state.description,
             date: this.state.date,

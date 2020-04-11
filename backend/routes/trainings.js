@@ -2,23 +2,13 @@ const router = require('express').Router();
 const trainingController = require('../controllers/trainings.controller');
 let Training = require('../models/training.model');
 
-router.route('/').get((req, res) => {
-    Training.find({})
-    .then(trainings => res.json(trainings))
-    .catch(err => res.status(400).json('Error:' + err));
-})
+router.route('/').get(trainingController.getAll); 
 
+router.route('/:id').get(trainingController.getOne);
 
+router.route('/add').post(trainingController.post);
 
-router.route('/:id').get((req, res) => {
-    Training.findOne({ id: req.params.id })
-    .then(training => res.json(training))
-    .catch(err => res.status(400).json('Error:' + err));
-})
-
-router.route('/add',trainingController.post);
-
-router.route('/:id',trainingController.delete)
+router.route('/:id').delete(trainingController.delete);
 
 router.route('/update/:id').post((req, res) => {
     Training.findOne({ id: req.params.id })
