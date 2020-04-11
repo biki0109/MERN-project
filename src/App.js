@@ -1,7 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { Button } from 'reactstrap';
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './App.css';
 
 import Navbar from "./components/navbar.component";
@@ -12,8 +16,14 @@ import EditTraining from "./components/edit-training.component";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className = "">
+        Header here
       </div>
+      
+      <div className="App">
+      Something goes here
+      </div>
+      
       <div className = "container">
         <Navbar />
         <br/>
