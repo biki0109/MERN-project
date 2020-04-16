@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 
+import Navbar from './training-tracker.component';
+
 export default class EditTraining extends Component {
     constructor(props) {
         super(props);
@@ -26,7 +28,6 @@ export default class EditTraining extends Component {
     }
 
     componentDidMount() {
-
         axios.get('http://localhost:8080/trainings/'+this.props.match.params.id)
         .then(res => {
             this.setState ({
@@ -98,14 +99,17 @@ export default class EditTraining extends Component {
 
         axios.put('http://localhost:8080/trainings/update/'+this.props.match.params.id, training)
         .then(res => console.log(res.data));
-
-        window.location = '/';
+        alert("Training schedule is updated");
+        window.location = '/trainings';
     }
 
     render() {
         return (
             <div>
+                <Navbar/>
+                <br/>
                 <h3>Edit training schedule</h3>
+                <br/>
                 <form onSubmit={this.onSubmit}>
                     <div className = "form-group">
                         <label>Client's name: </label>

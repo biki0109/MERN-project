@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 const Training = props => (
     <tr>
       <td>{props.training.clientName}</td>
@@ -56,7 +57,9 @@ export default class TrainingList extends Component {
     render() {
         return (
             <div>
+              <br/>
               <h3>Training schedules</h3>
+              <br/>
                 <table className = "table">
                   <thead className = "thead-light">
                     <tr>

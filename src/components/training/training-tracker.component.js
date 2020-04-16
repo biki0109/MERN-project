@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-//import 'jquery';
-//import jQuery from 'jquery'
-import 'bootstrap/dist/css/bootstrap.min.css';
-//import {Button} from 'react';
 
 export default class Navbar extends Component {
     constructor(props) {
@@ -29,11 +25,8 @@ export default class Navbar extends Component {
     render() {
         const collapsed = this.state.collapsed;
         const classOne = collapsed ? 'collapse navbar-collapse' : 'collapse navbar-collapse show';
-        //const classTwo = collapsed ? 'navbar-toggler navbar-toggler-left collapsed' : 'navbar-toggler navbar-toggler-left';
         return (
-            
-            <nav className = "navbar navbar-dark bg-dark navbar-expand-lg fixed-top" >
-                
+            <nav className = "navbar navbar-dark bg-dark navbar-expand-lg" >
                 <Link to="/trainings" className = "navbar-brand">Training Tracker</Link>
                 <button
                     type="button"

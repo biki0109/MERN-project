@@ -3,9 +3,10 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import axios from 'axios';
 
+import Navbar from './training-tracker.component';
+
 export default class CreateTraining extends Component {
 
-    
     constructor(props) {
         super(props);
 
@@ -93,14 +94,17 @@ export default class CreateTraining extends Component {
 
         axios.post('http://localhost:8080/trainings/add', training)
         .then(res => console.log(res.data));
-
-        window.location = '/';
+        alert("New training schedule is created");
+        window.location = '/trainings';
     }
 
     render() {
         return (
             <div>
+                <Navbar/>
+                <br/>
                 <h3>Create training schedule</h3>
+                <br/>
                 <form onSubmit={this.onSubmit}>
                     <div className = "form-group">
                         <label>Client's name: </label>

@@ -18,11 +18,16 @@ connection.once('open', () => {
     console.log("CONNECTED");
 })
 
-const usersRouter = require('./routes/users');
-const trainingsRouter = require('./routes/trainings');
 
-app.use('/users', usersRouter);
-app.use('/trainings', trainingsRouter);
+
+//app.use('/users', usersRouter);
+app.use('/trainings', require('./routes/trainings.route'));
+app.use('/packs', require('./routes/packs.route'));
+
+app.use('/users',  require('./routes/users.route'));
+//app.use('/trainings', require('./routes/trainings'));
+app.use('/items',  require('./routes/items.route'));
+app.use('/auth', require('./routes/auth.route'));
 
 
 app.listen(port, () => { console.log(`LISTENING ON ${port}`)});
