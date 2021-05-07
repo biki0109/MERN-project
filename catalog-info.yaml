@@ -4,6 +4,8 @@ metadata:
   name: MERN-project
   annotations:
     github.com/project-slug: biki0109/MERN-project
+    backstage.io/techdocs-ref: value
+
 spec:
   type: other
   lifecycle: unknown
