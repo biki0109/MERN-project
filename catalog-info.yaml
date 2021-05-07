@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: MERN-project
+  annotations:
+    github.com/project-slug: biki0109/MERN-project
+spec:
+  type: other
+  lifecycle: unknown
+  owner: demo
