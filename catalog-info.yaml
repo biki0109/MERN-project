@@ -5,6 +5,7 @@ metadata:
   annotations:
     github.com/project-slug: biki0109/MERN-project
     backstage.io/techdocs-ref: value
+  tags: ["react","node","mongodb","express"]
 spec:
   type: other
   lifecycle: unknown
